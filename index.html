@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+</head>
+<body>
+    <p> [Enter numbers between 2 and 10] </p>
+    <label for="start"></label>
+    <input type="text" id="f" name="f">
+    <label for="l"> by </label>
+    <input type="text" id="l" name="l"><br><br>
+    <button onclick="fortable()">Click here when ready!</button><br><br>
+    <div id="product"></div>
+</body>
+
+<script>
+    function fortable() {
+        var v1 = parseInt(document.getElementById("f").value);
+        var v2 = parseInt(document.getElementById("l").value);
+
+      
+        if (v1 < 2 || v1 > 10 || v2 < 2 || v2 > 10) {
+            alert("Please enter numbers between 2 and 10.");
+            return;
+        }
+
+        var table="<table border='1'>";
+    for (var c1 = 1; c1 <= v1; c1++) {
+        table += "<tr>";
+        
+            for (var c2 = 1; c2 <= v2; c2++) {
+            table += "<td>" + (c2 * c1) + "</td>";
+        }
+        table += "</tr>";
+    }
+    table += "</table>";
+    document.getElementById("product").innerHTML = table;
+        }
+        
+    
+</script>
+</html>
